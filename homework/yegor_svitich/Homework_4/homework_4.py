@@ -12,8 +12,9 @@ print(my_dict['list'])
 my_dict['list'].pop(1)
 print(my_dict['list'])
 
-my_dict['dict']['i am a tuple'] = 'value7'
+my_dict['dict'][('i am a tuple',)] = 'value7'
 print(my_dict['dict'])
+print(type(('i am a tuple',)))
 my_dict['dict'].pop('1')
 print(my_dict['dict'])
 
