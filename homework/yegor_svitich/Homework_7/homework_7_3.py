@@ -5,9 +5,11 @@ results = [
     'результат: 2'
 ]
 
+
 def find_add_print(result):
     new_number = (int(result[result.index(':') + 1:])) + 10
     print(new_number)
+
 
 for result in results:
     find_add_print(result)
