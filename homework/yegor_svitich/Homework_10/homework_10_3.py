@@ -15,7 +15,7 @@ def smart_operation(func):
 
 
 @smart_operation
-def calc(first, second, operation = None):
+def calc(first, second, operation=None):
     if operation == '+':
         return first + second
     elif operation == '-':
