@@ -16,6 +16,7 @@ class Book:
             details += ", зарезервирована"
         return details
 
+
 class SchoolBook(Book):
     def __init__(self, title, author, page_count, subject, grade, has_tasks=False, is_reserved=False):
         super().__init__(title, author, page_count, isbn=None, is_reserved=is_reserved)
@@ -29,6 +30,7 @@ class SchoolBook(Book):
         if self.is_reserved:
             details += ", зарезервирована"
         return details
+
 
 books = [
     Book("Идиот", "Достоевский", 500, "978-5-389-04715-0"),
