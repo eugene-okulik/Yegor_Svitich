@@ -12,17 +12,21 @@ class Flower:
                 f"Свежесть: {self.freshness}/10 | Длина стебля: {self.stem_length}см | "
                 f"Среднее время до увядания: {self.lifespan} дней | Цена: {self.price} BYN.")
 
+
 class Rose(Flower):
     def __init__(self, price, freshness, color, stem_length):
         super().__init__("Роза", price, 7, freshness, color, stem_length)
+
 
 class Tulip(Flower):
     def __init__(self, price, freshness, color, stem_length):
         super().__init__("Тюльпан", price, 5, freshness, color, stem_length)
 
+
 class Lily(Flower):
     def __init__(self, price, freshness, color, stem_length):
         super().__init__("Лилия", price, 8, freshness, color, stem_length)
+
 
 class Bouquet:
     def __init__(self):
@@ -41,7 +45,8 @@ class Bouquet:
         return sum(f.price for f in self.flowers)
 
     def get_average_lifespan(self):
-        if not self.flowers: return 0
+        if not self.flowers:
+            return 0
         return sum(flower.lifespan for flower in self.flowers) / len(self.flowers)
 
     # Метод поиска цветов со временем увядания больше либо равным среднему
