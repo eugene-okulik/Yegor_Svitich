@@ -80,7 +80,7 @@ for (title,) in cursor.fetchall():
 
 print("\n--- Полная информация о студенте (одним запросом) ---")
 query = """
-    SELECT st.name, st.second_name, st.group_id, g.title, g.start_date, g.end_date, b.title, m.value, l.title, s.title 
+    SELECT st.name, st.second_name, st.group_id, g.title, g.start_date, g.end_date, b.title, m.value, l.title, s.title
     FROM students st
     INNER JOIN `groups` g
     ON st.group_id = g.id
