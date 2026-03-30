@@ -65,7 +65,7 @@ db.commit()
 print("\n--- Все оценки студента ---")
 query = """
     SELECT m.value, l.title FROM marks m INNER JOIN lessons l
-    ON m.lesson_id = l.id 
+    ON m.lesson_id = l.id
     WHERE m.student_id = %s
 """
 cursor.execute(query, (student_id,))
@@ -80,8 +80,8 @@ for (title,) in cursor.fetchall():
 
 print("\n--- Полная информация о студенте (одним запросом) ---")
 query = """
-    SELECT st.name, st.second_name, st.group_id, g.title, g.start_date, g.end_date, b.title, m.value, l.title, s.title  
-    FROM students st 
+    SELECT st.name, st.second_name, st.group_id, g.title, g.start_date, g.end_date, b.title, m.value, l.title, s.title 
+    FROM students st
     INNER JOIN `groups` g
     ON st.group_id = g.id
     INNER JOIN books b
