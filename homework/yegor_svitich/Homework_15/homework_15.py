@@ -27,10 +27,9 @@ print(f"Создана группа с ID: {group_id}")
 cursor.execute("UPDATE students SET group_id = %s WHERE id = %s", (group_id, student_id))
 
 # 4. Добавление книг студенту
-books = [('1984 (Оруэлл)',), ('Ведьмак (Сапковский)',), ('Мастер и Маргарита (Булгаков)',)]
-for book in books:
-    cursor.execute("INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)",
-                   (book[0], student_id))
+books = [('1984 (Оруэлл)', student_id), ('Ведьмак (Сапковский)', student_id),
+         ('Мастер и Маргарита (Булгаков)', student_id)]
+cursor.executemany("INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)", books)
 
 # 5. Добавление предметов и сохранение их id в словарь
 subjects = ['Python', 'SQL', 'Automation']
@@ -56,9 +55,8 @@ for title, subject_id in lessons_to_add:
 
 # 7. Выставление оценок за уроки (8, 8, 9, 8, 9, 8)
 marks_values = [8, 8, 9, 8, 9, 8]
-for value, lesson_id in zip(marks_values, lesson_ids):
-    cursor.execute("INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)",
-                   (value, lesson_id, student_id))
+marks_data = [(value, lesson_id, student_id) for value, lesson_id in zip(marks_values, lesson_ids)]
+cursor.executemany("INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)", marks_data)
 
 db.commit()
 
