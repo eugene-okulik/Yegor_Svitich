@@ -39,7 +39,7 @@ with open(eugene_file_path, newline='') as csv_file:
             ON l.subject_id = s.id
             WHERE st.name = %s AND second_name = %s
             AND g.title = %s AND b.title = %s
-            AND s.title = %s 
+            AND s.title = %s
             AND l.title = %s AND m.value = %s;
         """
         values = (
@@ -49,7 +49,7 @@ with open(eugene_file_path, newline='') as csv_file:
         )
         cursor.execute(query, values)
         result = cursor.fetchone()
-        if result is None: # данных в базе нету
+        if result is None:  # данных в базе нету
             value = list(row.values())
             print(f"Данных не хватает в базе:\nСтудент: {value[0]} {value[1]} | Группа: {value[2]} | "
                   f"Книга: {value[3]} | Предмет: {value[4]} | Урок: {value[5]} | Оценка: {value[6]}")
