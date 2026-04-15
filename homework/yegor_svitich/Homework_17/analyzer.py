@@ -15,8 +15,8 @@ def get_date_from_line(line_content):
     if len(line_content) >= 23:
         date_candidate = line_content[:23]
         try:
-            # Пытаемся распознать дату (формат ISO, например 2026-04-15 13:03:00)
-            datetime.fromisoformat(date_candidate.replace(',', '.')) # замена для поддержки разных форматов
+            # Распознавание даты (формат ISO, например 2026-04-15 13:03:00)
+            datetime.fromisoformat(date_candidate.replace(',', '.'))  # замена для поддержки разных форматов
             return date_candidate
         except ValueError:
             pass
