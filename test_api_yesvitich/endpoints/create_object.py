@@ -3,6 +3,7 @@ import allure
 
 from endpoints.endpoint import Endpoint
 
+
 class CreateObject(Endpoint):
     @allure.step("Отправить POST-запрос на создание объекта")
     def create_object(self, payload):

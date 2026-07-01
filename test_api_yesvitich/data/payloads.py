@@ -7,6 +7,7 @@ def create_object_payload():
         }
     }
 
+
 def update_object_payload():
     return {
         "name": "Yegor's object (updated)",
@@ -16,6 +17,7 @@ def update_object_payload():
         }
     }
 
+
 def patch_object_payload():
     return {
         "data": {
@@ -23,6 +25,7 @@ def patch_object_payload():
             "surname": "Svitich"
         }
     }
+
 
 CREATE_OBJECT_DATA = [
     ("Yegor's object 1", {"Yegor 1": "Svitich 1"}),

@@ -3,6 +3,7 @@ import allure
 
 from endpoints.endpoint import Endpoint
 
+
 class UpdateObject(Endpoint):
     @allure.step("Отправить PUT-запрос для полного обновления объекта")
     def update_object(self, object_id, payload):

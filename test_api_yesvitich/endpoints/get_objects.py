@@ -3,6 +3,7 @@ import allure
 
 from endpoints.endpoint import Endpoint
 
+
 class GetObjects(Endpoint):
 
     @allure.step("Отправить GET-запрос на получение всех объектов")
